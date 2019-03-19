@@ -33,6 +33,13 @@ activation_model = models.Model(inputs=inp, outputs=outputs)
 activations = activation_model.predict(img_arr)
 
 
+# test
+# plt.imshow(img_arr[0])
+# plt.show()
+# plt.imshow(activations[0][0])
+# plt.show()
+
+
 def display_activation(activations, col_size, row_size, act_index):
     activation = activations[act_index]
     n = activation.shape[-1]
@@ -62,6 +69,7 @@ def display_activation(activations, col_size, row_size, act_index):
 
 
 # visualize layer 4
-display_activation(activations, 8, 8, 6)
-plt.show()
 
+for val in [1, 2, 4, 6, 8]:
+    display_activation(activations, 8, 8, val)
+    plt.show()
