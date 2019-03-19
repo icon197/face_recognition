@@ -9,6 +9,8 @@ from keras.layers import Activation, Dropout, Flatten, Dense, BatchNormalization
 from keras.models import model_from_json
 from keras import models
 from keras import backend as K
+from keras.utils.vis_utils import plot_model
+
 
 # Load image
 img = load_img("models/thanh.jpg", target_size=(150, 150))
@@ -34,10 +36,11 @@ activations = activation_model.predict(img_arr)
 
 
 # test
-# plt.imshow(img_arr[0])
-# plt.show()
-# plt.imshow(activations[0][0])
-# plt.show()
+# plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
+plt.imshow(img_arr[0])
+plt.show()
+plt.imshow(activations[0][0])
+plt.show()
 
 
 def display_activation(activations, col_size, row_size, act_index):
@@ -70,6 +73,6 @@ def display_activation(activations, col_size, row_size, act_index):
 
 # visualize layer 4
 
-for val in [1, 2, 4, 6, 8]:
-    display_activation(activations, 8, 8, val)
-    plt.show()
+# for val in [1, 2, 4, 6, 8]:
+#     display_activation(activations, 8, 4, val)
+#     plt.show()
