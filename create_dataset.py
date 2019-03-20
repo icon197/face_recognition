@@ -1,5 +1,6 @@
 import os
 import shutil
+import matplotlib.pyplot as plt
 
 from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
 
